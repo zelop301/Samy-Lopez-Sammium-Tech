@@ -1,7 +1,7 @@
 import React from "react";
 import { ChevronDown, Code2, Sparkles, Terminal, ArrowRight } from "lucide-react";
 import cosmicNebula from "../assets/images/cosmic_nebula_banner_1784106863105.jpg";
-import samHeadshot from "../assets/images/sam_lopez_profile_1784109885244.jpg";
+import samHeadshot from "../assets/images/sam-lopez-real-headshot.jpg";
 
 export default function Hero() {
   const handleScrollToProjects = () => {
