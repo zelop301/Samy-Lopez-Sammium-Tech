@@ -1,5 +1,7 @@
 import React from "react";
 import { ChevronDown, Code2, Sparkles, Terminal, ArrowRight } from "lucide-react";
+import cosmicNebula from "../assets/images/cosmic_nebula_banner_1784106863105.jpg";
+import samHeadshot from "../assets/images/sam_lopez_profile_1784109885244.jpg";
 
 export default function Hero() {
   const handleScrollToProjects = () => {
@@ -17,7 +19,7 @@ export default function Hero() {
       {/* Cinematic Background Nebula Image with Blurs and Grid Lines */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/cosmic_nebula_banner_1784106863105.jpg"
+          src={cosmicNebula}
           alt="Cosmic Space Backdrop"
           className="w-full h-full object-cover opacity-35 select-none scale-105"
           referrerPolicy="no-referrer"
@@ -48,7 +50,7 @@ export default function Hero() {
           {/* Solid Rounded Border Container for Image */}
           <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-slate-800 bg-slate-950 flex items-center justify-center shadow-2xl">
             <img
-              src="/src/assets/images/sam_lopez_profile_1784109885244.jpg"
+              src={samHeadshot}
               alt="Sam Lopez Headshot"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               referrerPolicy="no-referrer"
