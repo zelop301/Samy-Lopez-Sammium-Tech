@@ -13,6 +13,31 @@ export type FlagshipProject = {
 
 export const flagshipProjects: FlagshipProject[] = [
   {
+    slug: "orbitlab-v4",
+    title: "Sammium OrbitLab 4.0",
+    eyebrow: "Immersive 3D space simulation",
+    description:
+      "A real-time browser-based solar system and spacecraft simulator featuring 3D planets, procedural textures, physically based lighting, orbital visualization, cockpit controls, autopilot, tactical navigation, scanning, and mission systems.",
+    preview: "./previews/orbitlab-v4-preview.png",
+    demoPath: "https://zelop301.github.io/sammium-orbitlab/",
+    tags: [
+      "Three.js",
+      "WebGL",
+      "JavaScript",
+      "3D Simulation",
+      "PBR",
+      "Responsive UI",
+    ],
+    status: "Interactive Prototype",
+    accent: "cyan",
+    highlights: [
+      "Real-time 3D planetary rendering and orbital visualization",
+      "Interactive spacecraft controls, cockpit mode, and autopilot",
+      "Mission systems, tactical navigation, scanning, and telemetry",
+    ],
+  },
+ 
+  {
     slug: "quantumverse",
     title: "Sammium QuantumVerse",
     eyebrow: "Immersive quantum learning universe",
