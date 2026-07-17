@@ -7,7 +7,8 @@ const projects = [
   ["quantumverse", "apps/quantumverse/dist"],
   ["research-lab", "apps/research-lab/dist"],
   ["agrimind-ai", "apps/agrimind-ai/dist"],
-  ["cosmos-os", "apps/cosmos-os/dist"]
+  ["cosmos-os", "apps/cosmos-os/dist"],
+  ["sentinel-sense", "apps/sentinel-sense/dist"],
 ];
 await rm(destination, { recursive: true, force: true });
 await mkdir(destination, { recursive: true });

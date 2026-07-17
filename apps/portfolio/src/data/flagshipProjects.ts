@@ -80,6 +80,29 @@ export const flagshipProjects: FlagshipProject[] = [
       "Responsive WebGL rendering with device-aware performance",
     ],
   },
+  {
+    slug: "sentinel-sense",
+    title: "Sammium Sentinel Sense",
+    eyebrow: "AI-assisted predictive risk awareness",
+    description:
+      "A cinematic hazard-simulation and predictive risk-awareness dashboard featuring nine risk domains, deterministic offline analysis, interactive telemetry, and optional Gemini-assisted predictions.",
+    preview: "./previews/sentinel-sense.png",
+    demoPath: "./projects/sentinel-sense/index.html",
+    tags: [
+      "React 19",
+      "TypeScript",
+      "Risk Analytics",
+      "Data Visualization",
+      "Gemini AI",
+    ],
+    status: "Interactive Prototype",
+    accent: "cyan",
+    highlights: [
+      "Nine simulated hazard and infrastructure risk domains",
+      "Optimized real-time telemetry and predictive timeline",
+      "Deterministic offline engine with optional AI analysis",
+    ],
+  },
 ];
 
 export const getFlagshipProject = (slug: string) =>
