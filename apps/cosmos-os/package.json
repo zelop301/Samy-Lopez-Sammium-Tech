@@ -1,0 +1,47 @@
+{
+  "name": "@sammium/cosmos-os",
+  "private": true,
+  "version": "1.0.0",
+  "description": "An interactive Three.js galaxy simulator with educational cosmic laboratories and an optional Gemini-powered assistant.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "tsx watch server.ts",
+    "build": "npm run clean && npm run build:client && npm run build:server",
+    "build:client": "vite build",
+    "build:server": "esbuild server.ts --bundle --platform=node --format=esm --packages=external --sourcemap --outfile=server.js",
+    "start": "node server.js --production",
+    "preview": "npm run build && npm start",
+    "clean": "node -e \"for (const p of ['dist','server.js','server.js.map']) require('node:fs').rmSync(p,{recursive:true,force:true})\"",
+    "typecheck": "tsc --noEmit",
+    "lint": "npm run typecheck",
+    "check": "npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.185.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3"
+  }
+}

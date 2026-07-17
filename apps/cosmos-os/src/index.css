@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --cosmos-cyan: #00c8ff;
+  --cosmos-violet: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #02030a;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cosmos-cyan);
+  outline-offset: 2px;
+}
+
+::selection {
+  color: #fff;
+  background: rgb(0 200 255 / 35%);
+}
+
+@keyframes cosmos-spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes cosmos-reverse-spin {
+  to { transform: rotate(-360deg); }
+}
+
+.animate-spin-slow {
+  animation: cosmos-spin-slow 18s linear infinite;
+}
+
+.animate-reverse-spin {
+  animation: cosmos-reverse-spin 14s linear infinite;
+}
+
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 200 255 / 35%) rgb(2 3 10 / 85%);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgb(0 200 255 / 35%);
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgb(2 3 10 / 85%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
