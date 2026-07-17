@@ -63,7 +63,25 @@ export const flagshipProjects: FlagshipProject[] = [
       "Prototype sandbox and knowledge systems",
     ],
   },
+  {
+    slug: "cosmos-os",
+    title: "Sammium Cosmos OS",
+    eyebrow: "Interactive cosmic observatory",
+    description:
+      "An immersive browser-based universe observatory featuring real-time 3D galaxy visualization, scientific laboratories, orbital simulations, and an AI-assisted astronomy guide.",
+    preview: "./previews/cosmos-os.png",
+    demoPath: "./projects/cosmos-os/index.html",
+    tags: ["React 19", "TypeScript", "Three.js", "WebGL", "Space Science"],
+    status: "Interactive Prototype",
+    accent: "violet",
+    highlights: [
+      "Interactive real-time Three.js galaxy simulator",
+      "Black-hole, quantum, orbital, and planetary-defense laboratories",
+      "Responsive WebGL rendering with device-aware performance",
+    ],
+  },
 ];
 
 export const getFlagshipProject = (slug: string) =>
   flagshipProjects.find((project) => project.slug === slug);
+
