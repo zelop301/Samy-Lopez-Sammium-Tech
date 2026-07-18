@@ -37,6 +37,31 @@ export const flagshipProjects: FlagshipProject[] = [
     "Jump navigation, cockpit telemetry, autopilot, and Fleet Link multiplayer",
   ],
 },
+{
+  slug: "sentinelops",
+  title: "Sammium SentinelOps",
+  eyebrow: "Cyber incident command platform",
+  description:
+    "A full-stack cyber incident command and response platform featuring secure authentication, role-based access, live threat alerts, incident workflows, evidence management, audit trails, and real-time WebSocket synchronization.",
+  preview: "./previews/sentinelops-preview.png",
+  demoPath: "https://sammium-sentinelops.onrender.com",
+  tags: [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "WebSockets",
+    "JWT",
+    "RBAC",
+    "Cybersecurity",
+  ],
+  status: "Product Prototype",
+  accent: "cyan",
+  highlights: [
+    "Real-time incident response and threat-alert synchronization",
+    "JWT authentication with Administrator, Analyst, and Viewer roles",
+    "Evidence management, analyst timelines, and attributable audit trails",
+  ],
+},
  
   {
     slug: "quantumverse",
