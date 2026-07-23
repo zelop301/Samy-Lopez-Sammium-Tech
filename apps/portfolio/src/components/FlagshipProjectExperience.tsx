@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ArrowLeft, ExternalLink, LoaderCircle, Maximize2, RotateCcw } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, LoaderCircle, Maximize2, RotateCcw } from "lucide-react";
 import { getFlagshipProject } from "../data/flagshipProjects";
 
 type Props = {
@@ -63,6 +63,18 @@ export default function FlagshipProjectExperience({ slug, onBack }: Props) {
             <RotateCcw className="h-4 w-4" />
             Reload
           </button>
+          {project.sourcePath && (
+            <a
+              href={project.sourcePath}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`View ${project.title} source code on GitHub`}
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-800 px-3 py-2 text-xs text-slate-300 transition hover:bg-slate-900"
+            >
+              <Github className="h-4 w-4" />
+              <span className="hidden sm:inline">Source</span>
+            </a>
+          )}
           <a
             href={project.demoPath}
             target="_blank"
@@ -77,7 +89,8 @@ export default function FlagshipProjectExperience({ slug, onBack }: Props) {
       </header>
 
       <div className="border-b border-amber-400/15 bg-amber-400/5 px-4 py-2 text-center text-[10px] leading-5 text-amber-100/75 sm:text-xs">
-        GitHub Pages runs this as a static interactive demo. Features that call Gemini or Express require the project backend to be deployed separately.
+        {project.deploymentNote ??
+          "GitHub Pages runs this as a static interactive demo. Features that call Gemini or Express require the project backend to be deployed separately."}
       </div>
 
       <section className="relative flex-1 bg-black">
@@ -87,7 +100,9 @@ export default function FlagshipProjectExperience({ slug, onBack }: Props) {
               <LoaderCircle className="h-8 w-8 animate-spin text-cyan-300" />
               <div>
                 <p className="text-sm font-semibold text-white">Initializing {project.title}</p>
-                <p className="mt-1 text-xs text-slate-500">The full project is loaded only when you launch it.</p>
+                <p className="mt-1 max-w-lg px-6 text-xs leading-5 text-slate-500">
+                  {project.deploymentNote ?? "The full project is loaded only when you launch it."}
+                </p>
               </div>
             </div>
           </div>
@@ -100,6 +115,7 @@ export default function FlagshipProjectExperience({ slug, onBack }: Props) {
           className="h-[calc(100vh-4rem)] min-h-[680px] w-full border-0 bg-black"
           allow="fullscreen; clipboard-read; clipboard-write; microphone; autoplay"
           loading="eager"
+          referrerPolicy="strict-origin-when-cross-origin"
         />
       </section>
     </main>

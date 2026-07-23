@@ -5,48 +5,13 @@ export type FlagshipProject = {
   description: string;
   preview: string;
   demoPath: string;
-  sourcePath?: string;
-  deploymentNote?: string;
   tags: string[];
-  status:
-    | "Interactive Prototype"
-    | "Research Platform"
-    | "Product Prototype"
-    | "Production Deployment";
+  status: "Interactive Prototype" | "Research Platform" | "Product Prototype";
   accent: "cyan" | "emerald" | "violet";
   highlights: string[];
 };
 
 export const flagshipProjects: FlagshipProject[] = [
-
-  {
-    slug: "nexusops",
-    title: "Sammium NexusOps",
-    eyebrow: "Event-driven systems integration platform",
-    description:
-      "A production-deployed integration command center that normalizes payment events, persists them in PostgreSQL, routes them through Redis and BullMQ, and processes CRM and Slack actions through a Fastify API and background worker.",
-    preview: "./previews/nexusops-preview.png",
-    demoPath: "https://nexusops-web-production.up.railway.app",
-    tags: [
-      "React",
-      "TypeScript",
-      "Fastify",
-      "PostgreSQL",
-      "Redis",
-      "BullMQ",
-      "OpenAPI",
-      "Docker",
-      "Railway"
-    ],
-    status: "Production Deployment",
-    accent: "cyan",
-    highlights: [
-      "Live Web, API, Worker, PostgreSQL, and Redis services deployed on Railway",
-      "Canonical event normalization, correlation IDs, idempotency, retries, and dead-letter recovery",
-      "Interactive OpenAPI documentation with automated GitHub Actions validation",
-      "End-to-end payment.succeeded processing through a production queue worker"
-    ]
-  },
 {
   slug: "orbitlab-v5",
   title: "Sammium OrbitLab 5.0",
@@ -189,37 +154,8 @@ export const flagshipProjects: FlagshipProject[] = [
       "Deterministic offline engine with optional AI analysis",
     ],
   },
-  {
-    slug: "aetherverse",
-    title: "Sammium AetherVerse",
-    eyebrow: "Immersive holographic command universe",
-    description:
-      "A cinematic sci-fi command platform featuring a procedural holographic citadel, seven functional orbiting sectors, click-to-dock interfaces, persistent progression, adaptive performance, and a secure Node.js API.",
-    preview: "./previews/aetherverse.webp",
-    demoPath: "https://sammium-aetherverse.onrender.com",
-    sourcePath: "https://github.com/zelop301/sammium-aetherverse",
-    deploymentNote:
-      "AetherVerse runs as a live Node.js service on Render. The free instance can take up to 50 seconds to wake after inactivity.",
-    tags: [
-      "JavaScript",
-      "Node.js",
-      "Canvas",
-      "CSS 3D",
-      "Web Audio",
-      "Render",
-    ],
-    status: "Production Deployment",
-    accent: "cyan",
-    highlights: [
-      "Procedural holographic citadel with seven functional orbiting sectors",
-      "Cinematic hyperdrive, synchronized soundscape, and docking interactions",
-      "Adaptive graphics, persistent progression, and secure API services",
-    ],
-  },
-
 ];
 
 export const getFlagshipProject = (slug: string) =>
   flagshipProjects.find((project) => project.slug === slug);
-
 

@@ -20,6 +20,7 @@
     "dev:cosmos": "npm run dev -w @sammium/cosmos-os",
     "dev:sentinel": "npm run dev -w @sammium/sentinel-sense",
     "lint": "npm run lint --workspaces --if-present",
+    "validate:aetherverse": "node scripts/validate-aetherverse-portfolio.mjs",
     "build:projects": "npm run build:client -w @sammium/quantumverse && npm run build:client -w @sammium/research-lab && npm run build:client -w @sammium/agrimind-ai && npm run build:client -w @sammium/cosmos-os && npm run build:client -w @sammium/sentinel-sense",
     "assemble": "node scripts/assemble-projects.mjs",
     "build:portfolio": "npm run build:client -w @sammium/portfolio",

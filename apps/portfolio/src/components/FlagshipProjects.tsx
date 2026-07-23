@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Cpu, Layers3, Sparkles } from "lucide-react";
+import { ArrowUpRight, Cpu, Github, Layers3, Sparkles } from "lucide-react";
 import { flagshipProjects } from "../data/flagshipProjects";
 
 type Props = {
@@ -42,10 +42,10 @@ export default function FlagshipProjects({ onOpen }: Props) {
               Flagship Systems
             </div>
             <h2 className="max-w-4xl font-display text-4xl font-black tracking-tight text-white sm:text-6xl">
-              Three worlds. One portfolio.
+              {flagshipProjects.length} systems. One portfolio.
             </h2>
             <p className="max-w-3xl text-sm leading-7 text-slate-400 sm:text-base">
-              My primary projects are integrated as complete, launchable experiences. Each system keeps its own visual identity while living inside one unified Sammium portfolio architecture.
+              My flagship projects are presented as complete, launchable experiences. Each system keeps its own visual identity while living inside one unified Sammium portfolio architecture.
             </p>
           </div>
           <div className="rounded-2xl border border-slate-800/80 bg-slate-900/35 p-5 text-sm leading-6 text-slate-400 backdrop-blur-sm">
@@ -53,7 +53,7 @@ export default function FlagshipProjects({ onOpen }: Props) {
               <Layers3 className="h-4 w-4 text-cyan-300" />
               Integrated architecture
             </div>
-            Each experience is isolated, lazy-loaded, and launched only when requested, protecting the portfolio’s initial load speed and preventing dependency conflicts.
+            Static workspaces are isolated and lazy-loaded, while production deployments open through their live services. This protects initial load speed and prevents dependency conflicts.
           </div>
         </div>
 
@@ -79,7 +79,7 @@ export default function FlagshipProjects({ onOpen }: Props) {
                       {project.status}
                     </span>
                     <span className="rounded-full border border-white/10 bg-slate-950/65 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.15em] text-slate-300 backdrop-blur-md">
-                      0{index + 1}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
                 </div>
@@ -108,14 +108,29 @@ export default function FlagshipProjects({ onOpen }: Props) {
                     ))}
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => onOpen(project.slug)}
-                    className={`flex w-full items-center justify-between rounded-xl border px-4 py-3 text-xs font-bold uppercase tracking-[0.14em] transition ${accent.button}`}
-                  >
-                    Launch complete experience
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </button>
+                  <div className={`grid gap-2 ${project.sourcePath ? "grid-cols-[minmax(0,1fr)_auto]" : "grid-cols-1"}`}>
+                    <button
+                      type="button"
+                      onClick={() => onOpen(project.slug)}
+                      aria-label={`Launch ${project.title} complete experience`}
+                      className={`flex w-full items-center justify-between rounded-xl border px-4 py-3 text-xs font-bold uppercase tracking-[0.14em] transition ${accent.button}`}
+                    >
+                      Launch complete experience
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </button>
+                    {project.sourcePath && (
+                      <a
+                        href={project.sourcePath}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`View ${project.title} source code on GitHub`}
+                        title="View source code"
+                        className={`grid min-h-11 min-w-11 place-items-center rounded-xl border transition ${accent.button}`}
+                      >
+                        <Github className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             );

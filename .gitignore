@@ -7,3 +7,6 @@ apps/portfolio/public/projects/
 !.env.example
 .DS_Store
 *.log
+.portfolio-backups/
+
+.portfolio-backups/
